@@ -5,6 +5,10 @@ let taskList
 
 function render(){
   tasks.innerHTML = ''
+  renderTaskList()
+}
+
+function renderTaskList(){
   taskList.arr.forEach(function(task){
     let li = document.createElement('li')
     let button = document.createElement('button')

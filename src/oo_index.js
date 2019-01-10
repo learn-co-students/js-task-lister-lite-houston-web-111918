@@ -7,8 +7,14 @@ function render(){
   tasks.innerHTML = ''
   taskList.arr.forEach(function(task){
     let li = document.createElement('li')
-    li.innerText = task.content
+    let button = document.createElement('button')
+    button.innerText = 'X'
+    li.append(button, task.content)
     tasks.append(li)
+    button.addEventListener('click', function(){
+      taskList.deleteTask(task)
+      render()
+    })
   })
 }
 
